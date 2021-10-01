@@ -19,7 +19,7 @@ Account.prototype.deposit = function (amount) {
 
   var account = new Transaction();
 
-  if ((amount === 'fake money') || (amount === NaN) || (amount <= 0) || (amount % 1 !== 0)) {
+  if ((amount === '') || (amount <= 0) || (amount % 1 !== 0)) {
     return false;
   } else if (amount > 0) {
 
@@ -35,7 +35,7 @@ Account.prototype.withdraw = function (amount) {
 
   var account = new Transaction();
 
-  if ((amount === 'fake money') || (amount === NaN) || (amount <= 0) || (amount % 1 !== 0)) {
+  if ((amount === '') || (amount <= 0) || (amount % 1 !== 0)) {
     return false;
   } else if (amount > 0) {
     account.type = 'withdrawal';
@@ -47,6 +47,7 @@ Account.prototype.withdraw = function (amount) {
 
 
 Account.prototype.getBalance = function () {
+
   var value = 0;
   for (let i = 0; i < this.transactions.length; i++){
     if (this.transactions[i].type === 'deposit') {
