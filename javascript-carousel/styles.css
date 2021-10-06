@@ -1,0 +1,33 @@
+
+.container{
+  display: flex;
+}
+
+.left-arrow-container{
+  flex-basis: calc(100% / 3);
+  font-size: 3.5rem;
+  padding-left: 40px;
+  padding-top: 200px;
+}
+
+.picture-container{
+  flex-basis: calc(100% / 3);
+
+}
+
+.right-arrow-container{
+  flex-basis: calc(100% / 3);
+  font-size: 3.5rem;
+  text-align: right;
+  padding-right: 40px;
+  padding-top: 200px;
+}
+
+.progress-dot{
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.fa-circle {
+  margin: 5px;
+}
