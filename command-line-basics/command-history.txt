@@ -1,0 +1,119 @@
+    1  git config --global user.name "Susana-Gutierrez"
+    2  git config --global user.email "susanagabriela_ap@hotmail.com"
+    3  git config --global --list
+    4  dir
+    5  pwd
+    6  cd repos
+    7  dir
+    8  cd m2-0921-code-solutions/
+    9  cd http-messages/
+   10  http https://examples.com
+   11  http --verbose https://examples.com
+   12  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+   13  http --body GET https://example.com > index.html
+   14  exit
+   15  dir
+   16  pwd
+   17  cd repos/
+   18  dir
+   19  cd ajax-project/
+   20  dir
+   21  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
+   22  http://makeup-api.herokuapp.com/api/v1/products.json?tags=Vegan
+   23  http://makeup-api.herokuapp.com/api/v1/products.json?tags
+   24  http://makeup-api.herokuapp.com/api/v1/products.json?tags='Vegan'
+   25  http://makeup-api.herokuapp.com/api/v1/products.json?products_tags=Vegan
+   26  http://makeup-api.herokuapp.com/api/v1/products.json?products_tags=vegan
+   27  http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=vegan
+   28  http://makeup-api.herokuapp.com/api/v1/products.json?product_tags
+   29  http://makeup-api.herokuapp.com/api/v1/products.json?brand
+   30  http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick
+   31  http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl
+   32  http://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer
+   33  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=vegan
+   34  clear
+   35  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=vegan
+   36  dir
+   37  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=vegan > json-test.json
+   38  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=marcelle&product_tags=vegan > json-test2.json
+   39  clear
+   40  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=marcelle&product_tags=vegan 
+   41  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=marcelle&product_tags=vegan > json-test2.json
+   42  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=marcelle
+   43  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=marcelle&product_type=lipstick
+   44  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=marcelle&product_type=blush
+   45  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?category=lipstick
+   46  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?category=lipstick > json-test2.json
+   47  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?category=lipstick&product_tags=vegan
+   48  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner&product_tags=gluten_free
+   49  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json
+   50  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
+   51  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?product_type==eyeliner&product_tags==gluten_free
+   52  http --body GET http://makeup-api.herokuapp.com/api/v1/products.json?product_type==eyeliner
+   53  man
+   54  man man
+   55  man cat
+   56  ls
+   57  man ls
+   58  pwd
+   59  man pwd
+   60  man echo
+   61  man touch
+   62  man mkdir
+   63  man mv
+   64  man rm
+   65  man cp
+   66  pwd
+   67  cd repos
+   68  dir
+   69  cd m2-0921-code-solutions/
+   70  dir
+   71  cd command-line-basics/
+   72  pwd
+   73  man cat
+   74  cat laziness.txt
+   75  cat impatience.txt
+   76  cat hubris.txt
+   77  cat laziness.txt impatience.txt hubris.txt
+   78  ls
+   79  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   80  ls
+   81  man ls
+   82  cat three-virtues.txt
+   83  man ls
+   84  ls -aF lfz-staff > lfz-staff/contents.txt
+   85  cat lfz-staff/contents.txt
+   86  pwd
+   87  man pwd
+   88  pwd > i-was-here.txt
+   89  ls
+   90  cat i-was-here.txt
+   91  man echo
+   92  echo 'Hello, World!'
+   93  echo 'Hello, World!' > hello.txt
+   94  ls 
+   95  cat hello.txt
+   96  man touch
+   97  touch tag-youre-it.txt
+   98  touch snoot/boot.txt
+   99  man ls
+  100  ls snoot/
+  101  man mkdir
+  102  mkdir parent
+  103  ls
+  104  mkdir -p parent/child/grandchild
+  105  ls
+  106  ls parent
+  107  ls parent/child
+  108  touch .gitkeep parent/child/grandchild
+  109  ls parent/child/grandchild
+  110  ls -a parent/child/grandchild
+  111  mv pokiemans pokemon
+  112  ls
+  113  rm lol.txt
+  114  ls
+  115  rm -r kill-me/
+  116  ls
+  117  cp and-then.txt no-and-then.txt
+  118  ls
+  119  history > command-history.txt
