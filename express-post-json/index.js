@@ -17,17 +17,10 @@ app.get('/api/grades', function (req, res) {
 app.use(express.json());
 
 app.post('/api/grades', function (req, res) {
-  grades.id = nextId;
-  grades.name = req.body.name;
-  grades.course = req.body.course;
-  grades.score = req.body.score;
-  gradeArray.push(grades);
-  nextId++;
-
-
+  grades[nextId] = req.body;
+  grades[nextId].id = nextId;
+  gradeArray.push(grades[nextId]);
   res.status(201);
-  res.json(grades);
-
-  grades = {};
-
+  res.json(grades[nextId]);
+  nextId = nextId + 1;
 });
