@@ -3,7 +3,6 @@ var express = require('express');
 var app = express();
 var filedata = require('./data.json');
 var fs = require('fs');
-const { restart } = require('nodemon');
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
@@ -22,6 +21,11 @@ function error404CantFindID(res, id) {
   res.json({ "error": `cannot find note with id ${id}` });
 }
 
+function error404NotFound(res) {
+  res.status(404);
+  res.json({ "error": "bad URL" });
+}
+
 function error404ContentRequiredField (res) {
   res.status(400);
   res.json({ "error": "content is a required field" });
@@ -30,6 +34,17 @@ function error404ContentRequiredField (res) {
 function unexpectedError500 (res) {
   res.status(500);
   res.json({ "error": "An unexpected error occurred." });
+}
+
+/****  */
+
+function hasStringOnlyNumbers (value) {
+  for (let i = 0; i < value.length; i++) {
+    if ((value.charCodeAt(i) < 48) || (value.charCodeAt(i) > 57)) {
+      return false
+    }
+  }
+  return true;
 }
 
 
@@ -47,13 +62,14 @@ app.get('/api/notes', function (req, res) {
 
 app.get('/api/notes/:id', function (req, res) {
   var isThereANote = false;
-  var id = parseInt(req.params.id);
+  var id = req.params.id;
+  var onlyNumbers = hasStringOnlyNumbers(id);
 
-  if (Number.isNaN(id)) {
+  if (onlyNumbers=== false) {
     error400PositiveInteger(res);
   } else {
     for (const value in filedata.notes) {
-      if (filedata.notes[value].id === id) {
+      if (filedata.notes[value].id === parseInt(id)) {
         res.json(filedata.notes[value]);
         isThereANote = true;
         break;
@@ -91,17 +107,19 @@ app.post('/api/notes', function (req, res) {
 /*** Clients can DELETE a note by id */
 
 app.delete('/api/notes', function (req, res) {
-  error400PositiveInteger(res);
+  error404NotFound(res);
 });
 
 app.delete('/api/notes/:id', function (req, res) {
   isThereANote = false;
-  var id = parseInt(req.params.id);
-  if (Number.isNaN(id)) {
+  var id = req.params.id;
+  var onlyNumbers = hasStringOnlyNumbers(id);
+
+  if (onlyNumbers === false) {
     error400PositiveInteger(res);
   } else {
     for (const value in filedata.notes) {
-      if (filedata.notes[value].id === id) {
+      if (filedata.notes[value].id === parseInt(id)) {
         delete filedata.notes[value];
         fs.writeFile('data.json', JSON.stringify(filedata, null, 2), 'utf8', (err) => {
           if (err) {
@@ -123,22 +141,23 @@ app.delete('/api/notes/:id', function (req, res) {
 /*** Clients can replace a not PUT by id */
 
 app.put('/api/notes', function (req, res) {
-  error400PositiveInteger(res);
+  error404NotFound(res);
 });
 
 
 app.put('/api/notes/:id', function (req, res) {
   isThereANote = false;
-  var id = parseInt(req.params.id);
+  var id = req.params.id;
   var content = req.body.content;
+  var onlyNumbers = hasStringOnlyNumbers(id);
 
-  if (Number.isNaN(id)) {
+  if (onlyNumbers === false) {
     error400PositiveInteger(res);
   } else if (content === undefined) {
     error404ContentRequiredField(res);
   } else {
     for (const value in filedata.notes) {
-      if (filedata.notes[value].id === id) {
+      if (filedata.notes[value].id === parseInt(id)) {
         filedata.notes[value].content = content;
         fs.writeFile('data.json', JSON.stringify(filedata, null, 2), 'utf8', (err) => {
           if (err) {
