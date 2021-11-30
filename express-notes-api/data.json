@@ -1,0 +1,57 @@
+{
+  "nextId": 38,
+  "notes": {
+    "2": {
+      "id": 2,
+      "content": "The event loop, this, closures, and prototypal inheritance are special about JavaScript."
+    },
+    "5": {
+      "id": 5,
+      "content": "In JavaScript, the value of `this` is determined when a function is called; not when it is defined."
+    },
+    "6": {
+      "id": 6,
+      "content": "A closure is formed when a function retains access to variables in its lexical scope."
+    },
+    "9": {
+      "id": 9,
+      "content": "Inertia is a property of matter."
+    },
+    "10": {
+      "content": "The journey of a thousand miles begins with one step.",
+      "id": 10
+    },
+    "11": {
+      "content": "That which does not kill us makes us stronger",
+      "id": 11
+    },
+    "12": {
+      "content": "Life is what happens when you're busy making other plans",
+      "id": 12
+    },
+    "13": {
+      "content": "You must be the change you wish to see in the world.",
+      "id": 13
+    },
+    "14": {
+      "content": "You only live once, but if you do it right, once is enough.",
+      "id": 14
+    },
+    "30": {
+      "content": "Life would be tragic if it weren't funny.",
+      "id": 30
+    },
+    "31": {
+      "content": "The opposite of love is not hate; it's indifference.",
+      "id": 31
+    },
+    "32": {
+      "content": "Don't be afraid to give up the good to go for the great.",
+      "id": 32
+    },
+    "36": {
+      "content": "Hello",
+      "id": 36
+    }
+  }
+}
